@@ -57,6 +57,10 @@ type UserData = $ReadOnly<{|
 |}>;
 
 module.exports = {
+  initializeAppEventsLogger() {
+    AppEventsLogger.initializeAppEventsLogger();
+  },
+
   /**
    * Sets the current event flushing behavior specifying when events
    * are sent back to Facebook servers.

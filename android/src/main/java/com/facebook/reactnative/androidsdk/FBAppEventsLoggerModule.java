@@ -104,16 +104,16 @@ import java.util.Currency;
  */
 public class FBAppEventsLoggerModule extends ReactContextBaseJavaModule {
 
-    private AppEventsLogger mAppEventLogger;
-    private ReactApplicationContext mReactContext;
+    private static AppEventsLogger mAppEventLogger;
+    private static ReactApplicationContext mReactContext;
 
     public FBAppEventsLoggerModule(ReactApplicationContext reactContext) {
         super(reactContext);
         mReactContext = reactContext;
     }
 
-    @Override
-    public void initialize() {
+    @ReactMethod
+    public static void initializeAppEventsLogger() { 
         mAppEventLogger = AppEventsLogger.newLogger(mReactContext);
     }
 
